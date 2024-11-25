@@ -37,16 +37,19 @@ public class JPAPersist {
             // Crear 3 ciudades para el país
             city city1 = new city();
             city1.setName("Ciudad Ficticia 1");
+            city1.setDistrict("Kabol1");
             city1.setPopulation(500_000);
             city1.setCountry(fictionalCountry);
 
             city city2 = new city();
             city2.setName("Ciudad Ficticia 2");
+            city2.setDistrict("Kabol2");
             city2.setPopulation(300_000);
             city2.setCountry(fictionalCountry);
 
             city city3 = new city();
             city3.setName("Ciudad Ficticia 3");
+            city3.setDistrict("Kabol3");
             city3.setPopulation(200_000);
             city3.setCountry(fictionalCountry);
 
@@ -54,11 +57,13 @@ public class JPAPersist {
             countrylanguage language1 = new countrylanguage();
             language1.setLanguage("Ficticio");
             language1.setIsOfficial("T");
+            language1.setPercentage(5.5);
             language1.setCountry(fictionalCountry);
 
             countrylanguage language2 = new countrylanguage();
             language2.setLanguage("Imaginario");
             language2.setIsOfficial("F");
+            language2.setPercentage(5.5);
             language2.setCountry(fictionalCountry);
 
             // Asociar las ciudades y los lenguajes al país
@@ -70,6 +75,7 @@ public class JPAPersist {
             em.getTransaction().commit();
 
             System.out.println("País imaginario, ciudades y lenguajes registrados exitosamente.");
+
         } catch (Exception e) {
             // Revertir en caso de error
             em.getTransaction().rollback();

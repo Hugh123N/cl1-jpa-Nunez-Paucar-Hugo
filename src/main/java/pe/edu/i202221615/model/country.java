@@ -9,10 +9,7 @@ public class country {
     @Id
     private String Code;
     private String Name;
-
-    //@Enumerated(EnumType.STRING) // Mapea el enum con los valores como texto
     private String continent;
-
     private String Region;
     private Double SurfaceArea;
     private Integer IndepYear;
@@ -26,10 +23,10 @@ public class country {
     private Integer Capital;
     private String Code2;
 
-    @OneToMany(mappedBy = "country")
+    @OneToMany(mappedBy = "country", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<city> citys;
 
-    @OneToMany(mappedBy = "country")
+    @OneToMany(mappedBy = "country", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<countrylanguage> languages;
 
     public country() {
