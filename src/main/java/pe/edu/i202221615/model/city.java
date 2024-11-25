@@ -6,7 +6,7 @@ import jakarta.persistence.*;
 @Table(name = "city")
 public class city {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer ID;
     private String Name;
     private String District;
@@ -65,5 +65,15 @@ public class city {
 
     public void setCountry(pe.edu.i202221615.model.country country) {
         this.country = country;
+    }
+
+    @Override
+    public String toString() {
+        return "city{" +
+                "Population=" + Population +
+                ", District='" + District + '\'' +
+                ", Name='" + Name + '\'' +
+                ", ID=" + ID +
+                '}';
     }
 }
